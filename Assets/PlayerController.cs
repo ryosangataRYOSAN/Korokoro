@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     float speed = 3.0f;
+  
+  	public Rigidbody rigidbody;
+	  private float jumpSpeed = 5f;
 
     // Start is called before the first frame update
     void Start() {
@@ -31,6 +34,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             speed *= 1.5f;
         }
+      
+      	if (Input.GetKeyDown(KeyCode.Space)) {
+			    rigidbody.velocity = new Vector3(0, jumpSpeed, 0);
+		    }
 
     }
 }
